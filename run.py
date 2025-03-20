@@ -1,6 +1,7 @@
 """
 This module runs the main function of create app.
 """
+
 from app import create_app
 
 app = create_app()
