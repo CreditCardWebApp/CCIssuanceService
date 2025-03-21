@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cc-issuance
+  namespace: credit-card-app
+spec:
+  rules:
+  - host: cc.dev.co
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cc-issuance-app-service
+            port:
+              name: http
