@@ -20,7 +20,7 @@ spec:
             - containerPort: 5000
           env:
             - name: SQLALCHEMY_DATABASE_URI
-              value: mysql-service://$(MYSQL_USER):$(MYSQL_PASSWORD)@mysql:3306/credit_cards_db
+              value: mysql://$(MYSQL_USER):$(MYSQL_PASSWORD)@mysql:3306/credit_cards_db
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
