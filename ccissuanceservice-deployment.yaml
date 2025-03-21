@@ -1,10 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
-  name: cc-issuance-app
+  name: cc-issuance-app-rollout
   namespace: credit-card-app
 spec:
   replicas: 1
+  strategy:
+    blueGreen:
+      activeService: cc-issuance-app-service  # Stable service
+      previewService: cc-issuance-app-service-preview  # New version preview
+      autoPromotionEnabled: false  # Requires manual promotion
   selector:
     matchLabels:
       app: cc-issuance-app
@@ -15,7 +20,7 @@ spec:
     spec:
       containers:
         - name: cc-issuance-app
-          image: 2023cs03011/cc-issuance-service:latest # Use the image name you build
+          image: 2023cs03011/cc-issuance-service:latest  # Update image to trigger rollout
           ports:
             - containerPort: 5000
           env:
