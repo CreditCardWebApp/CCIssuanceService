@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cc-issuance-app-service
+  name: cc-issuance-app-service-preview
   namespace: credit-card-app
 spec:
   type: NodePort
@@ -10,4 +10,4 @@ spec:
   ports:
     - port: 5000
       targetPort: 5000
-      nodePort: 30009
+      nodePort: 30019
