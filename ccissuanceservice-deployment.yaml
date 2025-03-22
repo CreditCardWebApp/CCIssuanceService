@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: cc-issuance-app
-          image: 2023cs03011/cc-issuance-service:1.0  # Update image to trigger rollout
+          image: 2023cs03011/cc-issuance-service:latest  # Update image to trigger rollout
           imagePullPolicy: Always 
           ports:
             - containerPort: 5000
