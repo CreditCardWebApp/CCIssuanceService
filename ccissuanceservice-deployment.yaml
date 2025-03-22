@@ -4,7 +4,7 @@ metadata:
   name: cc-issuance-app-rollout
   namespace: credit-card-app
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     blueGreen:
       activeService: cc-issuance-app-service  # Stable service
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: cc-issuance-app
-          image: 2023cs03011/cc-issuance-service:1.0  # Update image to trigger rollout
+          image: 2023cs03011/cc-issuance-service:latest  # Update image to trigger rollout
           imagePullPolicy: Always 
           ports:
             - containerPort: 5000
