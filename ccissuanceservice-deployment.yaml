@@ -4,7 +4,7 @@ metadata:
   name: cc-issuance-app-rollout
   namespace: credit-card-app
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     blueGreen:
       activeService: cc-issuance-app-service  # Stable service
