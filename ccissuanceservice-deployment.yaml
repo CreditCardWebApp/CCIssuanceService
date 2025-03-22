@@ -44,7 +44,7 @@ spec:
     blueGreen:
       activeService: cc-issuance-app-service  # Stable service
       previewService: cc-issuance-app-service-preview  # New version preview
-      autoPromotionEnabled: true  # Requires manual promotion
+      autoPromotionEnabled: false  # Requires manual promotion
   selector:
     matchLabels:
       app: cc-issuance-app
