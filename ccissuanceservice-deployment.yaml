@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cc-issuance-app
-          image: 2023cs03011/cc-issuance-service:latest # Use the image name you build
+          image: 2023cs03011/cc-issuance-service:1.0 # Use the image name you build
           imagePullPolicy: Always 
           ports:
             - containerPort: 5000
